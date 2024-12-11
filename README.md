@@ -3,7 +3,7 @@
 ![image](https://github.com/user-attachments/assets/8b892f03-e06f-4710-8637-bcf609d2ab6c)
 
 
-**so_long** is a 2D game where the player navigates a map to collect items and escape. The game features basic movement mechanics and graphical display, and is built using the **MiniLibX** graphics library. The project allows the user to move a character, collect items, and escape via an exit while avoiding obstacles.
+**so_long** is a 2D game where the player navigates a map to collect items and escape. The game features basic movement mechanics and graphical display, and is built using the **MiniLibX** graphics library. The project allows the user to move a character, collect items, and escape via an exit while avoiding obstacles. I have used pokemon characters, sprites and tiles to make my preoject.
 
 ## Project Overview
 
@@ -11,10 +11,9 @@ In **so_long**, the player controls a character that must collect all collectibl
 
 ### Key Features
 - **2D Game View**: Top-down or profile view of the game map.
-- **Collectibles and Exit**: The player needs to collect all items and reach the exit.
+- **Collectibles and Exit**: The player needs to collect all pokeballs and reach the exit.
 - **Map Validation**: The map is validated for correct structure (rectangular shape, proper wall configuration, unique exit, and starting position).
 - **Graphics**: Uses MiniLibX to render the game map and player movement.
-- **Smooth Window Management**: The game window remains responsive even when changing windows or minimizing.
 
 ## Gameplay
 
@@ -30,16 +29,17 @@ In **so_long**, the player controls a character that must collect all collectibl
 The map is provided as a `.ber` file, which contains a grid representing walls, free spaces, collectibles, and the player’s starting position. The map is constructed with the following characters:
 - `0`: Empty space (free space).
 - `1`: Wall (impassable).
-- `C`: Collectible item.
-- `E`: Exit.
+- `C`: Collectible item (pokeball).
+- `E`: Exit (Stairs).
 - `P`: Player's starting position.
 
 A valid map must adhere to these rules:
-- Contains exactly one exit (`E`), at least one collectible (`C`), and one player position (`P`).
+- Contains exactly one exit, at least one collectible, and one player position.
 - The map must be rectangular.
-- The map must be surrounded by walls (`1`).
+- The map must be surrounded by walls.
 - There should be no duplicate `P` or `E` characters.
-- The map must be parseable according to these rules, and if any misconfiguration occurs, the game will display an error message and exit.
+
+If any issues occur with the map the program will exit cleanly and display and Error message.
 
 Example of a valid map:
 ```
@@ -50,7 +50,7 @@ Example of a valid map:
 1111111111111
 ```
 
-Under /maps there are a few different maps. Some are valid, some are not.
+Under /maps there are a few different maps. For testing purposes some are valid and some are not. They are clearly named so it should be easy to tell what problem each of the incorrect maps have.
 
 ## Compilation Instructions
 
@@ -60,6 +60,7 @@ Before compiling the project, ensure you have all the necessary dependencies ins
 1. **MiniLibX**:
    - MiniLibX is a lightweight graphics library used in the 42 curriculum.
    - On Linux you will need to install `libglfw3` and `libglfw3-dev` to support MiniLibX. Use the following commands:
+
        ```bash
        sudo apt-get update
        sudo apt-get install libglfw3 libglfw3-dev
@@ -92,15 +93,6 @@ Use the following commands for cleanup:
 - `make fclean`: Remove object files and the compiled library.
 - `make re`: Rebuild the library from scratch.
 
-## Error Handling
-
-If any issues occur with the map, such as:
-- Invalid map format.
-- Duplicates of `P` or `E`.
-- Incorrect wall placement or broken paths.
-
-The program will exit cleanly and display and Error message.
-
 ## Bonus Part
 
 For the bonus part of **so_long**, I implemented the following extra features to enhance the game:
@@ -114,7 +106,7 @@ For the bonus part of **so_long**, I implemented the following extra features to
 3. **Movement Count Display**
    - Instead of displaying the player's movement count in the terminal, I added an on-screen display that shows the number of movements directly in the game window.
    - This helps keep the player informed without having to switch to the terminal, enhancing the user experience.
----
+
 ### Compilation
 Follow the same instructions, but using 
 ```bash
