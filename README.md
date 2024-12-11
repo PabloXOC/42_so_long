@@ -1,5 +1,8 @@
 # 42 so_long
 
+![image](https://github.com/user-attachments/assets/8b892f03-e06f-4710-8637-bcf609d2ab6c)
+
+
 **so_long** is a 2D game where the player navigates a map to collect items and escape. The game features basic movement mechanics and graphical display, and is built using the **MiniLibX** graphics library. The project allows the user to move a character, collect items, and escape via an exit while avoiding obstacles.
 
 ## Project Overview
@@ -47,63 +50,47 @@ Example of a valid map:
 1111111111111
 ```
 
-Example of another valid map:
+Under /maps there are a few different maps. Some are valid, some are not.
+
+## Compilation Instructions
+
+Before compiling the project, ensure you have all the necessary dependencies installed on your system:
+
+### Dependencies:
+1. **MiniLibX**:
+   - MiniLibX is a lightweight graphics library used in the 42 curriculum.
+   - On Linux you will need to install `libglfw3` and `libglfw3-dev` to support MiniLibX. Use the following commands:
+       ```bash
+       sudo apt-get update
+       sudo apt-get install libglfw3 libglfw3-dev
+       ```
+
+2. **Mathematics Library**:
+   - Ensure your compiler links the math library (`-lm`) during the build process.
+
+
+Once all dependencies are installed, compile the project using the `make` command:
+
+```bash
+make
 ```
-1111111111111111111111111111111111
-1E0000000000000C00000C000000000001
-1010010100100000101001000000010101
-1010010010101010001001000000010101
-1P0000000C00C0000000000000000000C1
-1111111111111111111111111111111111
+
+This will generate the game executable.
+
+### Running the Game:
+
+To run the game, execute the generated binary with a valid `.ber` map file:
+
+```bash
+./so_long path/to/map.ber
 ```
 
-## Compilation and Execution
-  
-### Steps to Compile:
+### Cleaning Up
+Use the following commands for cleanup:
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/PabloXOC/42_so_long.git so_long
-   cd so_long
-   ```
-
-2. **Makefile**:
-   The project includes a `Makefile` that handles compilation. To build the game, simply run:
-   ```bash
-   make
-   ```
-
-3. **Run the Game**:
-   To run the game, execute the following command, passing the map `.ber` file as an argument:
-   ```bash
-   ./so_long map.ber
-   ```
-
-4. **Clean Build**:
-   To clean up the project files, use the following command:
-   ```bash
-   make clean
-   ```
-
-5. **Remove All Build Files**:
-   To fully clean the project, including compiled files:
-   ```bash
-   make fclean
-   ```
-
-6. **Rebuild**:
-   To rebuild the project after cleaning:
-   ```bash
-   make re
-   ```
-
-## External Libraries and Functions
-
-The following external libraries and functions are used in this project:
-- **MiniLibX**: For graphics rendering and window management.
-- **Standard C Libraries**: For system calls like `open`, `close`, `read`, `write`, and memory management with `malloc`, `free`.
-- **Mathematics Library**: For math-related functions (compilation with `-lm`).
-- **ft_printf**: Custom implementation of `printf` for formatted output (if required).
+- `make clean`: Remove object files.
+- `make fclean`: Remove object files and the compiled library.
+- `make re`: Rebuild the library from scratch.
 
 ## Error Handling
 
@@ -112,25 +99,28 @@ If any issues occur with the map, such as:
 - Duplicates of `P` or `E`.
 - Incorrect wall placement or broken paths.
 
-The program will exit cleanly and display the following error message:
-```
-Error\n<specific error message>
-```
+The program will exit cleanly and display and Error message.
 
-## License
+## Bonus Part
 
-This project is intended for educational purposes as part of the **42** curriculum and **Piscine** at **42 Fundación Telefónica**. Feel free to explore the code, but note that it is not for commercial use.
+For the bonus part of **so_long**, I implemented the following extra features to enhance the game:
 
+### Features
+1. **Enemy Patrols**
+   - I added patrolling Charmander enemies to the game. If the player collides with a Charmander while navigating the map, the game ends, and the player loses.
+2. **Sprite Animation**
+   - To make the game more dynamic, I incorporated sprite animation for the player character. Instead of a static character, the player now looks in the direction it is walking.
+   - This adds a more polished look and feel to the game, making the movement more interactive.
+3. **Movement Count Display**
+   - Instead of displaying the player's movement count in the terminal, I added an on-screen display that shows the number of movements directly in the game window.
+   - This helps keep the player informed without having to switch to the terminal, enhancing the user experience.
 ---
-
-Thank you for reviewing the **so_long** project! Feel free to open an issue for any clarifications or feedback.
+### Compilation
+Follow the same instructions, but using 
+```bash
+make bonus
 ```
-
-### Key Features and Additions:
-1. **Game Description**: Provides a clear overview of the game's mechanics, controls, and objectives.
-2. **Map Structure**: Details the format of the `.ber` map, ensuring clarity about how the map should be structured.
-3. **Compilation and Usage**: Instructions on how to compile and run the game, as well as how to clean and rebuild the project.
-4. **Error Handling**: Describes how errors related to the map will be handled and displayed.
-5. **External Libraries**: Lists the libraries used, including MiniLibX and custom implementations like `ft_printf`.
-
-This README should give a comprehensive understanding of the **so_long** project while guiding users on how to compile, run, and interact with the game.
+to compile and using the executable 
+```bash
+./so_long_bonus path/to/map.ber
+```
