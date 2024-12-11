@@ -99,7 +99,7 @@ For the bonus part of **so_long**, I implemented the following extra features to
 
 ### Features
 1. **Enemy Patrols**
-   - I added patrolling Charmander enemies to the game. If the player collides with a Charmander while navigating the map, the game ends, and the player loses.
+   - I added patrolling Charmander enemies (M) to the game. If the player collides with a Charmander while navigating the map, the game ends, and the player loses.
 2. **Sprite Animation**
    - To make the game more dynamic, I incorporated sprite animation for the player character. Instead of a static character, the player now looks in the direction it is walking.
    - This adds a more polished look and feel to the game, making the movement more interactive.
