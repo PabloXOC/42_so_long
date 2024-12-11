@@ -7,7 +7,7 @@
 
 ## Project Overview
 
-In **so_long**, the player controls a character that must collect all collectibles on the map before reaching the exit. The movement is controlled using the keyboard arrow keys. The game is based on a map described in a `.ber` file, with a set of rules that define walls, collectibles, free spaces, and the player's starting position. The game runs in a window and uses the **MiniLibX** library for rendering.
+In **so_long**, the player controls a character that must collect all collectibles on the map before reaching the exit in the minimum amount of moves. The movement is controlled using the keyboard arrow keys. The game is based on a map described in a `.ber` file, with a set of rules that define walls, collectibles, free spaces, and the player's starting position. The game runs in a window and uses the **MiniLibX** library for rendering.
 
 ### Key Features
 - **2D Game View**: Top-down or profile view of the game map.
