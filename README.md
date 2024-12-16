@@ -90,7 +90,7 @@ To run the game, execute the generated binary with a valid `.ber` map file:
 Use the following commands for cleanup:
 
 - `make clean`: Remove object files.
-- `make fclean`: Remove object files and the compiled library.
+- `make fclean`: Remove object files and the compiled executable.
 - `make re`: Rebuild the library from scratch.
 
 ## Bonus Part
